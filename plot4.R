@@ -22,10 +22,12 @@ with(plot4, plot(full_time, as.numeric(as.character(Voltage)),
                  type="l", xlab="datetime", ylab="Voltage"))
 
 # Lower left plot
-with(plot4, plot(full_time, Sub_metering_1, type="l", 
-                 xlab="", ylab="Energy sub metering", yaxt="n"))
-with(plot4, lines(full_time, Sub_metering_2, type="l", col="red"))
-with(plot4, lines(full_time, Sub_metering_3, type="l", col="blue"))
+with(plot4, plot(full_time, as.numeric(as.character(Sub_metering_1)), 
+                 type="l", xlab="", ylab="Energy sub metering", yaxt="n"))
+with(plot4, lines(full_time, as.numeric(as.character(Sub_metering_2)), 
+                  type="l", col="red"))
+with(plot4, lines(full_time, as.numeric(as.character(Sub_metering_3)), 
+                  type="l", col="blue"))
 legend("topright", col=c("black","red","blue"), lwd=1, box.lwd=0,
        legend=colnames(plot4)[startsWith(colnames(plot4),"Sub")])
 axis(side=2, at=seq(0,30,by=10))
